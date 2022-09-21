@@ -1,0 +1,66 @@
+
+//JavaScript File
+const http = require('http')
+const fs = require('fs')
+const port = 3000
+const server = http.createServer(function(req,res){
+res.writeHead(200,{'Content-Type':'text/html'});
+fs.readFile('projectOne.html',function(error,data){
+    if(error){
+        res.writeHead(404);
+        res.write('File doesnot exit');
+    }
+    else{
+        res.write(data);
+    }
+    res.end();
+});
+
+
+
+
+})
+server.listen(port,function(error){
+    if(error){
+        console.log('Something went wrong.Check your code back',error);
+    }
+    else{
+        console.log('Server is listening on port' +port);
+    }
+})
+
+
+<HTML FILE>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+.header{font-size: 60px;
+        color:darkcyan;
+        display:flex;
+        justify-content: center;
+    }
+.sirName{ display:flex;
+          display: block;
+          font-size: 40px;
+          color:darkcyan;
+          justify-content: left;
+}
+    </style>
+</head>
+<body>
+    <h1 class="header">NATIONAL CYBER CITY</h1>
+    <div class="sirName">
+       <div> Instructor-Sir Win Htut</div>
+       <div>Class Name-Scholar Web Dev and Tech</div>
+       <div>Student Name-Mee Mee Min Swe</div>
+       <div>Student Email-1997meemeeminswe@gmail.com</div>
+   
+    </div>
+   
+</body>
+</html>
