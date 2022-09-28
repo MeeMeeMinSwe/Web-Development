@@ -1,0 +1,82 @@
+const express = require('express');
+const path=require('path');
+const server=express()
+
+server.get("/page1",(req,res)=>{
+    res.sendFile(path.join(__dirname+"/page1.html"));
+})
+
+server.get("/page2",(req,res)=>{
+    res.sendFile(path.join(__dirname+"/page2.html"));
+})
+server.get("/page3",(req,res)=>{
+    res.sendFile(path.join(__dirname+"/page3.html"));
+})
+server.get("/page4",(req,res)=>{
+    res.sendFile(path.join(__dirname+"/page4.html"));
+})
+
+server.listen(3000,()=>{
+    console.log('Server Starting up at: port:3000');
+})
+
+
+/html file 1/
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Hello!Welcome From Page 1</h1>
+</body>
+</html>
+
+
+/html file 2/
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Warmly Welcome from page 2</h1>
+</body>
+</html>
+
+
+
+/html file 3/
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+   <h1>Welcome from page 3</h1> 
+</body>
+</html>
+
+
+/html file 4/
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Welcome from page 4</h1>
+</body>
+</html>
