@@ -1,1 +1,48 @@
 a
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <label for="number">Plese select one number within 1 to 100</label>
+    <input type="number" id="number" name="number" min="1" max="100">
+    <button id="button" style="color:blue ;">click it</button>
+    <p></p>
+    <script>
+        let paragraph = document.querySelector("p");
+        let number = document.getElementById("number");
+        let button = document.getElementById("button");
+        let customerRequestArray = [];
+        let getRandomNum = function (range) {
+
+            let ranNum = Math.floor((Math.random() * range));
+            return ranNum;
+        }
+
+
+        button.addEventListener("click", (event) => {
+            let amount = number.value;
+            for (let i = 0; i < amount; i++) {
+                let customerRequest = getRandomNum(100);
+
+
+                customerRequestArray.push(customerRequest);
+                console.log(customerRequest);
+
+                console.log(customerRequestArray);
+                paragraph.textContent = customerRequestArray;
+
+            }
+        });
+
+
+    </script>
+</body>
+
+</html>
